@@ -130,9 +130,19 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'nombre' => [
+            'required' => 'El nombre es requerido',
+            'string'=>'El nombre tiene que ser un texto',
+            'max:255'=>'El nombre es demasiado largo'
         ],
+
+        'email' => [
+            'required' => 'El email es requerido',
+            'string'=>'El email tiene que ser un texto',
+            'max:255'=>'El email es demasiado largo',
+            'email'=>'Formato de email incorrecto',
+            'unique'=>'EL mail ya existe'
+        ]
     ],
 
     /*

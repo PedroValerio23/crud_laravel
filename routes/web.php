@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('usuarios.listar');
 });
+
+Route::get('/form','UserController@userform');
+/* nombre para el from action */
+Route::post('/save','UserController@save')->name('save');
