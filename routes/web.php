@@ -23,3 +23,6 @@ Route::get('/form','UserController@userform');
 /* nombre para el from action
 Guardar usuarios*/
 Route::post('/save','UserController@save')->name('save');
+
+/* Eliminar usuarios */
+Route::delete('/delete/{id}', 'UserController@destroy')->name('destroy');

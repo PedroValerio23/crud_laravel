@@ -37,4 +37,12 @@ class UserController extends Controller
 
 
     }
+
+    /* Para eliminar usuarios
+    OBS: Delete Non-static method Illuminate\Database\Eloquent\Model::delete() should not be called statically*/
+    public function destroy($id){
+        Usuario::destroy($id);
+
+        return back()->with('usuarioEliminado','Usuario eliminado');
+    }
 }
