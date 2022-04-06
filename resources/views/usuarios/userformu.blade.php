@@ -2,28 +2,27 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-7 mt-5">
-{{-- mensaje flash --}}
-@if (session('usuarioGuardado'))
+            {{-- mensaje flash --}}
+            @if (session('usuarioGuardado'))
+                <div class="alert alert-success">
+                    {{ session('usuarioGuardado') }}
+                </div>
+            @endif
 
-<div class="alert alert-success">{{session('usuarioGuardado')}}</div>
-
-@endif
-
-{{-- validacion de errores --}}
+            {{-- validacion de errores --}}
             @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                @foreach ( $errors->all() as $error )
-                <li>{{$error}}</li>
-
-                @endforeach
-                </ul>
-            </div>
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
             @endif
 
 
             <div class="card">
-                <form action="{{url('/save')}}" method="POST">
+                <form action="{{ url('/save') }}" method="POST">
                     @csrf
                     <div class="card-header text-center">AGREGAR USUARIO</div>
                     <div class="card-body">

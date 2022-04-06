@@ -13,10 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('usuarios.listar');
-});
+}); */
+Route::get('/','UserController@list');
 
+/* Formulario de usuarios */
 Route::get('/form','UserController@userform');
-/* nombre para el from action */
+/* nombre para el from action
+Guardar usuarios*/
 Route::post('/save','UserController@save')->name('save');
