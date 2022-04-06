@@ -26,3 +26,10 @@ Route::post('/save','UserController@save')->name('save');
 
 /* Eliminar usuarios */
 Route::delete('/delete/{id}', 'UserController@destroy')->name('destroy');
+
+/* Formulario para actualizars */
+
+Route::get('/editform/{id}','UserController@editform')->name('editform');
+/* Edidicion de usuarios */
+
+Route::patch('/edit/{id}','UserController@edit')->name('edit');

@@ -29,6 +29,13 @@
                             <td>{{ $user->nombre }}</td>
                             <td>{{ $user->email }}</td>
                             <td>
+                                <a href="{{route('editform',$user->id)}}" class="btn btn-primary mb-1">
+                                <i class="fas fa-pencil-alt"></i>
+                                </a>
+
+
+
+
                                 <form action="{{ route('destroy', $user->id) }}" method="POST">
                                     @csrf @method("DELETE")
                                     <button type="submit" onclick="return confirm('¿Borrar?');" class="btn btn-danger">
